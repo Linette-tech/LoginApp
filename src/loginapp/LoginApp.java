@@ -7,6 +7,7 @@ public class LoginApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        // This class handles user registration and login validation
         System.out.println("=== REGISTRATION ===");
 
         System.out.print("Enter first name: ");
