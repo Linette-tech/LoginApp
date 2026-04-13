@@ -7,7 +7,7 @@ public class LoginApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("=== REGISTER ===");
+        System.out.println("=== REGISTRATION ===");
 
         System.out.print("Enter first name: ");
         String firstName = input.nextLine();
