@@ -30,6 +30,7 @@ public class LoginApp {
         String result = user.registerUser();
         System.out.println(result);
 
+        // Only allow login if registration was successful
         if (result.equals("User has been registered successfully.")) {
             System.out.println("\n=== LOGIN ===");
 
