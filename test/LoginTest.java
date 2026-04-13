@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginTest {
 
+    // Test to verify valid username format
     @Test
     public void testValidUsername() {
         Login user = new Login("k_yl1", "Password@1", "+27683712918");
         assertTrue(user.checkUserName());
     }
 
+    // Test to check invalid username format
     @Test
     public void testInvalidUsername() {
         Login user = new Login("kyle", "Password@1", "+27683712918");
