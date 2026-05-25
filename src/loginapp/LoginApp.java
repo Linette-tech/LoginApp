@@ -1,6 +1,7 @@
 package loginapp;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class LoginApp {
 
@@ -49,6 +50,7 @@ public class LoginApp {
 
     int choice = 0;
     int totalMessages = 0;
+    ArrayList<Message> sentMessages = new ArrayList<>();
 
     while (choice != 3) {
 
@@ -101,15 +103,20 @@ if (msg.checkRecipientCell()
 
     System.out.println(msg.sentMessage(sendChoice));
 
-    if (sendChoice == 1 || sendChoice == 3) {
+    if (sendChoice == 1) {
 
     totalMessages++;
+    sentMessages.add(msg);
 
     System.out.println(msg.printMessages());
 
     System.out.println("Total messages sent: "
             + totalMessages);
 
+} else if (sendChoice == 3) {
+
+    System.out.println(msg.printMessages());
+    
     }
 
 } else {
