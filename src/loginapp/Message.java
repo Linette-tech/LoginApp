@@ -28,4 +28,19 @@ public boolean checkRecipientCell() {
             && recipient.length() <= 12;
 
     }
+
+public String createMessageHash() {
+
+    String[] words = message.split(" ");
+
+    String firstWord = words[0].toUpperCase();
+    String lastWord = words[words.length - 1].toUpperCase();
+
+    messageHash = messageID.substring(0, 2)
+            + ":" + numMessagesSent
+            + ":" + firstWord + lastWord;
+
+    return messageHash;
+
+    }
 }
