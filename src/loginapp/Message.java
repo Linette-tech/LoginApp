@@ -55,4 +55,17 @@ public String checkMessageLength() {
                 + ", please reduce the size.";
     }
 }
+
+public String sentMessage(int option) {
+
+    if (option == 1) {
+        return "Message successfully sent.";
+    } else if (option == 2) {
+        return "Press 0 to delete message.";
+    } else if (option == 3) {
+        return "Message successfully stored.";
+    } else {
+        return "Invalid option.";
+    }
+}
 }
