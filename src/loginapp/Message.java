@@ -16,5 +16,8 @@ public class Message {
         this.message = message;
 
     }
-    
+        public boolean checkMessageID() {
+        return messageID.length() == 10;
+    }
+
 }
