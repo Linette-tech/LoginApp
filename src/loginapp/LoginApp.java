@@ -115,7 +115,7 @@ if (msg.checkRecipientCell()
 
 } else if (sendChoice == 3) {
 
-    System.out.println(msg.printMessages());
+    System.out.println(msg.storeMessage());
     
     }
 
