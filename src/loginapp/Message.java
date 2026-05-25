@@ -43,4 +43,16 @@ public String createMessageHash() {
     return messageHash;
 
     }
+
+public String checkMessageLength() {
+
+    if (message.length() <= 250) {
+        return "Message ready to send.";
+    } else {
+        int extraCharacters = message.length() - 250;
+        return "Message exceeds 250 characters by "
+                + extraCharacters
+                + ", please reduce the size.";
+    }
+}
 }
