@@ -48,6 +48,7 @@ public class LoginApp {
     System.out.println("\nWelcome to QuickChat.");
 
     int choice = 0;
+    int totalMessages = 0;
 
     while (choice != 3) {
 
@@ -75,7 +76,7 @@ while (messageID.length() < 10) {
 }
 
 Message msg = new Message(messageID,
-        1,
+        totalMessages + 1,
         recipient,
         messageText);
 
@@ -101,7 +102,14 @@ if (msg.checkRecipientCell()
     System.out.println(msg.sentMessage(sendChoice));
 
     if (sendChoice == 1 || sendChoice == 3) {
-        System.out.println(msg.printMessages());
+
+    totalMessages++;
+
+    System.out.println(msg.printMessages());
+
+    System.out.println("Total messages sent: "
+            + totalMessages);
+
     }
 
 } else {
