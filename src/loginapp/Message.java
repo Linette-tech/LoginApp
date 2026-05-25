@@ -16,8 +16,16 @@ public class Message {
         this.message = message;
 
     }
+    
         public boolean checkMessageID() {
         return messageID.length() == 10;
+        
     }
+       
+public boolean checkRecipientCell() {
 
+    return recipient.startsWith("+27")
+            && recipient.length() <= 12;
+
+    }
 }
