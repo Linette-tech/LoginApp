@@ -82,4 +82,14 @@ public int returnTotalMessages() {
     return numMessagesSent;
 
 }
+
+public String storeMessage() {
+
+    return "{"
+            + "\"messageID\":\"" + messageID + "\","
+            + "\"messageHash\":\"" + messageHash + "\","
+            + "\"recipient\":\"" + recipient + "\","
+            + "\"message\":\"" + message + "\""
+            + "}";
+}
 }
