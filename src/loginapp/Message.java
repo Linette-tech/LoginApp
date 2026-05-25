@@ -76,4 +76,10 @@ public String printMessages() {
             + "\nRecipient: " + recipient
             + "\nMessage: " + message;
 }
+
+public int returnTotalMessages() {
+
+    return numMessagesSent;
+
+}
 }
