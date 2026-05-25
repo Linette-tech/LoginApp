@@ -68,4 +68,12 @@ public String sentMessage(int option) {
         return "Invalid option.";
     }
 }
+
+public String printMessages() {
+
+    return "Message ID: " + messageID
+            + "\nMessage Hash: " + messageHash
+            + "\nRecipient: " + recipient
+            + "\nMessage: " + message;
+}
 }
