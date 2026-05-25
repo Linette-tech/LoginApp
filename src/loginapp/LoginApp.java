@@ -127,19 +127,22 @@ if (msg.checkRecipientCell()
 
 }
         } else if (choice == 2) {
-            System.out.println("Coming Soon.");
+
+    System.out.println("Coming Soon.");
+        
         } else if (choice == 3) {
             System.out.println("Goodbye.");
         } else {
             System.out.println("Invalid option. Please try again.");
         }
         }      
-        }    
-        }
+        } 
+        
+}
         input.close();
-       
-            }
-        }
+    }
+}
+
         
         
    
