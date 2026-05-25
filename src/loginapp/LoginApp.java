@@ -60,7 +60,57 @@ public class LoginApp {
         input.nextLine();
 
         if (choice == 1) {
-            System.out.println("Send Messages selected.");
+            
+        System.out.print("Enter recipient number: ");
+String recipient = input.nextLine();
+
+System.out.print("Enter your message: ");
+String messageText = input.nextLine();
+
+String messageID = String.valueOf((int)
+        (Math.random() * 1000000000));
+
+while (messageID.length() < 10) {
+    messageID = "0" + messageID;
+}
+
+Message msg = new Message(messageID,
+        1,
+        recipient,
+        messageText);
+
+System.out.println(msg.checkMessageLength());
+
+if (msg.checkRecipientCell()
+        && msg.checkMessageID()
+        && messageText.length() <= 250) {
+
+    System.out.println("Cell phone number successfully captured.");
+
+    System.out.println("Message Hash: "
+            + msg.createMessageHash());
+
+    System.out.println("\nChoose an option:");
+    System.out.println("1. Send Message");
+    System.out.println("2. Discard Message");
+    System.out.println("3. Store Message");
+
+    int sendChoice = input.nextInt();
+    input.nextLine();
+
+    System.out.println(msg.sentMessage(sendChoice));
+
+    if (sendChoice == 1 || sendChoice == 3) {
+        System.out.println(msg.printMessages());
+    }
+
+} else {
+
+    System.out.println(
+            "Cell phone number is incorrectly formatted "
+            + "or message ID invalid.");
+
+}
         } else if (choice == 2) {
             System.out.println("Coming Soon.");
         } else if (choice == 3) {
