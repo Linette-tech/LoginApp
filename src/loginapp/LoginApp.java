@@ -42,8 +42,40 @@ public class LoginApp {
 
             boolean status = user.loginUser(loginUsername, loginPassword);
             System.out.println(user.returnLoginStatus(status, firstName, lastName));
-        }
+        
+            if (status == true) {
 
+    System.out.println("\nWelcome to QuickChat.");
+
+    int choice = 0;
+
+    while (choice != 3) {
+
+        System.out.println("\nPlease choose an option:");
+        System.out.println("1. Send Messages");
+        System.out.println("2. Show recently sent messages");
+        System.out.println("3. Quit");
+
+        choice = input.nextInt();
+        input.nextLine();
+
+        if (choice == 1) {
+            System.out.println("Send Messages selected.");
+        } else if (choice == 2) {
+            System.out.println("Coming Soon.");
+        } else if (choice == 3) {
+            System.out.println("Goodbye.");
+        } else {
+            System.out.println("Invalid option. Please try again.");
+        }
+        }      
+        }    
+        }
         input.close();
-    }
-}
+       
+            }
+        }
+        
+        
+   
+            
