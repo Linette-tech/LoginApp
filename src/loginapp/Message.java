@@ -151,4 +151,51 @@ public static String displayStoredMessages() {
     return output;
 }
 
+public static String displayLongestMessage() {
+
+    String longest = "";
+
+    for (int i = 0; i < storedCount; i++) {
+
+        if (storedMessages[i] != null
+                && storedMessages[i].length() > longest.length()) {
+
+            longest = storedMessages[i];
+        }
+    }
+
+    return longest;
+}
+
+public static String searchByMessageID(String searchID) {
+
+    for (int i = 0; i < totalCount; i++) {
+
+        if (messageIDs[i] != null && messageIDs[i].equals(searchID)) {
+
+            return "Recipient: " + recipients[i]
+                    + "\nMessage: " + getMessageByIndex(i);
+        }
+    }
+
+    return "Message ID not found.";
+}
+
+private static String getMessageByIndex(int index) {
+
+    if (index < sentCount && sentMessages[index] != null) {
+        return sentMessages[index];
+    }
+
+    if (index < storedCount && storedMessages[index] != null) {
+        return storedMessages[index];
+    }
+
+    if (index < disregardedCount && disregardedMessages[index] != null) {
+        return disregardedMessages[index];
+    }
+
+    return "";
+}
+
 }
