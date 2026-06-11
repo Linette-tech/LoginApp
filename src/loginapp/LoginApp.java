@@ -66,12 +66,12 @@ public class LoginApp {
         if (choice == 1) {
             
         System.out.print("Enter recipient number: ");
-String recipient = input.nextLine();
+        String recipient = input.nextLine();
 
-System.out.print("Enter your message: ");
-String messageText = input.nextLine();
+        System.out.print("Enter your message: ");
+        String messageText = input.nextLine();
 
-String messageID = String.valueOf((int)
+        String messageID = String.valueOf((int)
         (Math.random() * 1000000000));
 
 while (messageID.length() < 10) {
@@ -104,21 +104,32 @@ if (msg.checkRecipientCell()
 
     System.out.println(msg.sentMessage(sendChoice));
 
-    if (sendChoice == 1) {
+if (sendChoice == 1) {
 
     totalMessages++;
     sentMessages.add(msg);
+
+    Message.addMessage(messageID, msg.createMessageHash(),
+            recipient, messageText, "Sent");
 
     System.out.println(msg.printMessages());
 
     System.out.println("Total messages sent: "
             + totalMessages);
 
+} else if (sendChoice == 2) {
+
+    Message.addMessage(messageID, msg.createMessageHash(),
+            recipient, messageText, "Disregard");
+
 } else if (sendChoice == 3) {
+
+    Message.addMessage(messageID, msg.createMessageHash(),
+            recipient, messageText, "Stored");
 
     System.out.println(msg.storeMessage());
     
-    }
+}
 
 } else {
 
