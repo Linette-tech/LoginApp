@@ -52,12 +52,13 @@ public class LoginApp {
     int totalMessages = 0;
     ArrayList<Message> sentMessages = new ArrayList<>();
 
-    while (choice != 3) {
+    while (choice != 4) {
 
         System.out.println("\nPlease choose an option:");
         System.out.println("1. Send Messages");
         System.out.println("2. Show recently sent messages");
-        System.out.println("3. Quit");
+        System.out.println("3. Stored Messages");
+        System.out.println("4. Quit");
 
         choice = input.nextInt();
         input.nextLine();
@@ -126,22 +127,67 @@ if (msg.checkRecipientCell()
             + "or message ID invalid.");
 
 }
-        } else if (choice == 2) {
+
+ } else if (choice == 2) {
 
     System.out.println("Coming Soon.");
-        
-        } else if (choice == 3) {
-            System.out.println("Goodbye.");
-        } else {
-            System.out.println("Invalid option. Please try again.");
+
+} else if (choice == 3) {
+
+    System.out.println("\nStored Messages Menu");
+    System.out.println("1. Display stored messages");
+    System.out.println("2. Display longest message");
+    System.out.println("3. Search by message ID");
+    System.out.println("4. Search by recipient");
+    System.out.println("5. Delete by message hash");
+    System.out.println("6. Display report");
+
+    int storedChoice = input.nextInt();
+    input.nextLine();
+
+    if (storedChoice == 1) {
+        System.out.println(Message.displayStoredMessages());
+
+    } else if (storedChoice == 2) {
+        System.out.println(Message.displayLongestMessage());
+
+    } else if (storedChoice == 3) {
+        System.out.print("Enter message ID: ");
+        String searchID = input.nextLine();
+        System.out.println(Message.searchByMessageID(searchID));
+
+    } else if (storedChoice == 4) {
+        System.out.print("Enter recipient: ");
+        String searchRecipient = input.nextLine();
+        System.out.println(Message.searchByRecipient(searchRecipient));
+
+    } else if (storedChoice == 5) {
+        System.out.print("Enter message hash: ");
+        String searchHash = input.nextLine();
+        System.out.println(Message.deleteByHash(searchHash));
+
+    } else if (storedChoice == 6) {
+        System.out.println(Message.displayReport());
+
+    } else {
+        System.out.println("Invalid stored message option.");
+    }
+
+} else if (choice == 4) {
+
+    System.out.println("Goodbye.");
+
+} else {
+
+    System.out.println("Invalid option. Please try again.");
+          }
         }
-        }      
-        } 
-        
-}
+      }
+    }
         input.close();
     }
 }
+
 
         
         

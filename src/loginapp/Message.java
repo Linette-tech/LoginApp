@@ -165,6 +165,7 @@ public static String displayLongestMessage() {
     }
 
     return longest;
+    
 }
 
 public static String searchByMessageID(String searchID) {
@@ -222,6 +223,26 @@ public static String deleteByHash(String searchHash) {
     }
 
     return "Message hash not found.";
+    
+}
+
+public static String displayReport() {
+
+    String output = "";
+
+    for (int i = 0; i < totalCount; i++) {
+
+        if (messageIDs[i] != null) {
+
+            output += "Message ID: " + messageIDs[i] + "\n";
+            output += "Message Hash: " + messageHashes[i] + "\n";
+            output += "Recipient: " + recipients[i] + "\n";
+            output += "Message: " + getMessageByIndex(i) + "\n\n";
+        }
+    }
+
+    return output;
+    
 }
 
 private static String getMessageByIndex(int index) {
