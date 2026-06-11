@@ -106,4 +106,49 @@ public String storeMessage() {
             + "\"message\":\"" + message + "\""
             + "}";
 }
+
+// Part 3 Method
+
+public static void addMessage(String messageID,
+        String messageHash,
+        String recipient,
+        String message,
+        String status) {
+
+    messageIDs[totalCount] = messageID;
+    messageHashes[totalCount] = messageHash;
+    recipients[totalCount] = recipient;
+
+    if (status.equalsIgnoreCase("Sent")) {
+
+        sentMessages[sentCount] = message;
+        sentCount++;
+
+    } else if (status.equalsIgnoreCase("Stored")) {
+
+        storedMessages[storedCount] = message;
+        storedCount++;
+
+    } else if (status.equalsIgnoreCase("Disregard")) {
+
+        disregardedMessages[disregardedCount] = message;
+        disregardedCount++;
+    }
+
+    totalCount++;
+}
+
+public static String displayStoredMessages() {
+
+    String output = "";
+
+    for (int i = 0; i < storedCount; i++) {
+
+        output += "Recipient: " + recipients[i] + "\n";
+        output += "Message: " + storedMessages[i] + "\n\n";
+    }
+
+    return output;
+}
+
 }
