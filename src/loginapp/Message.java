@@ -7,6 +7,20 @@ public class Message {
     private String recipient;
     private String message;
     private String messageHash;
+    
+    // Part 3 Arrays
+
+private static String[] sentMessages = new String[100];
+private static String[] disregardedMessages = new String[100];
+private static String[] storedMessages = new String[100];
+private static String[] messageHashes = new String[100];
+private static String[] messageIDs = new String[100];
+private static String[] recipients = new String[100];
+
+private static int sentCount = 0;
+private static int disregardedCount = 0;
+private static int storedCount = 0;
+private static int totalCount = 0;
 
     public Message(String messageID, int numMessagesSent, String recipient, String message) {
 
