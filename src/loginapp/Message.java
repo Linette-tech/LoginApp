@@ -181,6 +181,49 @@ public static String searchByMessageID(String searchID) {
     return "Message ID not found.";
 }
 
+public static String searchByRecipient(String searchRecipient) {
+
+    String output = "";
+
+    for (int i = 0; i < totalCount; i++) {
+
+        if (recipients[i] != null
+                && recipients[i].equals(searchRecipient)) {
+
+            output += getMessageByIndex(i) + "\n";
+        }
+    }
+
+    if (output.equals("")) {
+
+        return "No messages found for this recipient.";
+    }
+
+    return output;
+    
+}
+
+public static String deleteByHash(String searchHash) {
+
+    for (int i = 0; i < totalCount; i++) {
+
+        if (messageHashes[i] != null
+                && messageHashes[i].equals(searchHash)) {
+
+            String deletedMessage = getMessageByIndex(i);
+
+            messageIDs[i] = null;
+            messageHashes[i] = null;
+            recipients[i] = null;
+
+            return "Message: \"" + deletedMessage
+                    + "\" successfully deleted.";
+        }
+    }
+
+    return "Message hash not found.";
+}
+
 private static String getMessageByIndex(int index) {
 
     if (index < sentCount && sentMessages[index] != null) {
